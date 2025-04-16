@@ -1,98 +1,106 @@
-# 🛒 E-Commerce Microservices Platform
+# 🛒 Microservices-Based E-Commerce Platform
 
-This is a basic e-commerce platform built as part of the **Advanced Programming II – Assignment 1**. The project is built using **Clean Architecture** principles and includes **three microservices** communicating via REST.
+A simple e-commerce system developed as part of the **Advanced Programming II – Assignment 1**, designed using **Clean Architecture** principles. The platform consists of **three independent microservices** that interact via REST APIs.
 
-> **Student:** Bakhytzhan Abdilmazhit 
->
-> **University:** Astana IT University  
-> **Course:** Advanced Programming II  
-> **Assignment:** Implementing a Clean Architecture-Based Microservices
-
----
-
-## 🧠 Objective
-
-Build a basic e-commerce platform composed of three independent services:
-
-1. **API Gateway (Gin)** – Handles routing, logging, telemetry, and authentication.
-2. **Inventory Service (Gin + DB)** – Manages product inventory, categories, and stock levels.
-3. **Order Service (Gin + DB)** – Handles order creation, updates, payments, and tracking.
+> **👤 Student:** Bakhytzhan Abdilmazhit  
+> **🏫 Institution:** Astana IT University  
+> **📘 Course:** Advanced Programming II  
+> **📝 Assignment:** Clean Architecture & Microservices Implementation
 
 ---
 
-## 🏗️ Project Structure
+## 🎯 Project Goal
 
+Create a minimal yet functional e-commerce solution composed of three decoupled services:
 
+1. **API Gateway (Gin)** – Manages routing, request logging, telemetry, and future authentication.
+2. **Inventory Service (Gin + DB)** – Handles product data, categories, and stock levels.
+3. **Order Service (Gin + DB)** – Manages order creation, status updates, and payment tracking.
 
-Each service follows Clean Architecture, separating domain logic, interfaces, infrastructure, and delivery.
+---
+
+## 🧱 Architecture Overview
+
+Each microservice adheres to the **Clean Architecture** pattern, organizing code by:
+
+- **Domain logic**
+- **Infrastructure**
+- **Interfaces**
+- **Delivery mechanisms**
 
 ---
 
 ## 📦 Inventory Service
 
-Manages **products**, **categories**, **stock**, and **prices**.
+Responsible for managing **products**, **categories**, and **stock availability**.
 
-### ✨ Features
-- CRUD for products and categories
-- Filtering & pagination for product listing
+### 🔧 Key Features
 
-### 🔌 Endpoints
+- Full CRUD support for products and categories
+- Product listing with pagination and filters
 
-| Method | Endpoint             | Description                |
-|--------|----------------------|----------------------------|
-| POST   | `/products`          | Create a new product       |
-| GET    | `/products/:id`      | Retrieve a product by ID   |
-| PATCH  | `/products/:id`      | Update a product           |
-| DELETE | `/products/:id`      | Delete a product           |
-| GET    | `/products`          | List all products          |
+### 🔌 API Endpoints
+
+| Method | Route                | Description              |
+|--------|----------------------|--------------------------|
+| POST   | `/products`          | Add a new product        |
+| GET    | `/products/:id`      | Get product by ID        |
+| PATCH  | `/products/:id`      | Update product details   |
+| DELETE | `/products/:id`      | Remove a product         |
+| GET    | `/products`          | List available products  |
 
 ---
 
 ## 🧾 Order Service
 
-Handles **order creation**, **status updates**, and **payment tracking**.
+Manages the lifecycle of **orders**, including creation, updates, and payments.
 
-### ✨ Features
-- Associate orders with products and quantities
-- View order status
+### 🔧 Key Features
 
-### 🔌 Endpoints
+- Links orders to products and quantities
+- Supports order status tracking
 
-| Method | Endpoint             | Description                     |
-|--------|----------------------|---------------------------------|
-| POST   | `/orders`            | Create a new order              |
-| GET    | `/orders/:id`        | Retrieve order by ID            |
-| PATCH  | `/orders/:id`        | Update order status             |
-| GET    | `/orders`            | List all orders for a user      |
+### 🔌 API Endpoints
+
+| Method | Route                | Description                   |
+|--------|----------------------|-------------------------------|
+| POST   | `/orders`            | Place a new order             |
+| GET    | `/orders/:id`        | Get order details             |
+| PATCH  | `/orders/:id`        | Update order status           |
+| GET    | `/orders`            | View user’s order history     |
 
 ---
 
 ## 🚪 API Gateway
 
-Acts as the single access point to the services:
-- Handles routing to Inventory and Order services
-- Logging and telemetry integration
-- Placeholder for future auth middleware
+Serves as the unified access point for all services. Responsibilities include:
+
+- Routing traffic to Inventory and Order services
+- Centralized logging and telemetry
+- Placeholder for authentication middleware
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Go (Gin Web Framework)** – Backend for all services
-- **Any DB (e.g., PostgreSQL, MongoDB)** – Persistent storage per service
-- **Docker (optional)** – For containerized microservices
-- **REST API** – Communication between services and client
+- **Go + Gin** – Backend framework for all services
+- **Database** – Any DB engine (PostgreSQL, MongoDB, etc.)
+- **Docker (optional)** – Containerization of services
+- **REST** – API communication standard
 
 ---
 
-## 📂 How to Run
+## ▶️ Getting Started
 
-Each service can be run individually:
+Each service runs independently. For example, to launch the Inventory Service:
 
 ```bash
-# Example: Run Inventory Service
 cd inventory-service
 go run main.go
+```
 
-Additional Info
-I love jazz
+---
+
+### 🎷 Bonus
+
+Fun fact: I love jazz. So while your orders are processing and logs are flying by—maybe cue up some Coltrane or Miles Davis in the background.
